@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
 /* Universal Styling */
 * {
     padding: 0;
@@ -11,6 +13,10 @@
 }
 
 body {
+    font-family: Roboto, 'Segoe UI', Tahoma, sans-serif;
+}
+
+.container {
     width: 100%;
     min-height: 100vh;
     display: flex;
@@ -22,7 +28,8 @@ body {
 /* Section Styling */
 section {
     position: relative;
-    width: 40%;
+    width: 570px;
+    margin: 2rem 0;
 }
 
 section input {
@@ -49,13 +56,14 @@ section #search-icon {
 section #mic-icon {
     right: 20px;
     top: 25%;
+    cursor: pointer;
 }
 
 /* Main Styling */
 main {
     display: grid;
-    grid-template-columns: repeat(4, 100px);
-    grid-gap: 1rem;
+    grid-template-columns: repeat(4, 115px);
+    row-gap: 1rem;
 }
 
 main article {
@@ -65,12 +73,16 @@ main article {
     align-items: center;
     cursor: pointer;
     overflow: hidden;
-    padding: 10px;
+    padding: 12px 14px;
     border-radius: 4px;
 }
 
 main article:hover {
     background-color: #E8E8E9;
+}
+
+main article:hover .close-icon {
+    opacity: 1;
 }
 
 main article .round-container {
@@ -86,18 +98,18 @@ article .close-icon {
     top: 10px;
     right: 5px;
     width: 20px;
+    opacity: 0;
+    transition: opacity .1s ease-in;
+    transition-delay: 400ms;
 }
 
-/* article .close-icon:hover {
-    fill: black;
-} */
-
 article p {
-    /* text-align: center; */
-    width: 90px;
-    margin: 0 auto;
-    margin-top: 1.2rem;
+    width: 100%;
+    margin-top: 22px;
+    margin-bottom: 5px;
     white-space: nowrap; /* Text will never wrap to the next line */
     overflow: hidden;
     text-overflow: ellipsis;
+    font-size: 13px;
+    font-weight: 400;
 }
